@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Muhammad Waiz Siddiqui — Data & GTM Analyst</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#F3F5F4; --surface:#FFFFFF; --ink:#1C2B2E; --muted:#5B6B6E;
+    --amber:#B97A24; --teal:#2F6F65; --border:#DCE3E1;
+    box-sizing:border-box;
+    padding-top: env(safe-area-inset-top,0px);
+    padding-bottom: env(safe-area-inset-bottom,0px);
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#151C1D; --surface:#1C2526; --ink:#EDF2F1; --muted:#9CACAA;
+      --amber:#D99A4E; --teal:#5FA99B; --border:#2C3A3B;
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#151C1D; --surface:#1C2526; --ink:#EDF2F1; --muted:#9CACAA;
+    --amber:#D99A4E; --teal:#5FA99B; --border:#2C3A3B;
+  }
+  html{ scroll-padding-top: env(safe-area-inset-top,0px); }
+  *{ box-sizing:border-box; }
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:'IBM Plex Sans', system-ui, -apple-system, sans-serif;
+    line-height:1.55; -webkit-font-smoothing:antialiased;
+  }
+  ::selection{ background:var(--amber); color:#fff; }
+  .wrap{ max-width:760px; margin:0 auto; padding:64px 24px 80px; }
+  a{ color:var(--teal); }
+  h1,h2,h3{ font-family:'Fraunces', Georgia, serif; font-weight:500; margin:0; color:var(--ink); }
+
+  header.hero{ margin-bottom:40px; }
+  .kicker{ color:var(--muted); font-size:15px; margin:0 0 10px; }
+  h1{ font-size:42px; line-height:1.1; letter-spacing:-0.01em; }
+  .role{ font-size:19px; color:var(--teal); margin-top:8px; font-family:'Fraunces', serif; font-style:italic; font-weight:400; }
+  .intro{ max-width:62ch; color:var(--muted); margin-top:16px; font-size:16.5px; }
+  .contact{ margin-top:20px; font-size:14.5px; color:var(--muted); }
+  .contact a{ text-decoration:none; border-bottom:1px solid var(--border); }
+  .contact span{ margin:0 8px; color:var(--border); }
+
+  .kpis{ display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--border);
+    border:1px solid var(--border); margin:36px 0 8px; border-radius:2px; overflow:hidden; }
+  .kpi{ background:var(--surface); padding:18px 14px; }
+  .kpi .num{ font-family:'IBM Plex Mono', monospace; font-size:22px; color:var(--amber); font-weight:500; }
+  .kpi .lbl{ font-size:12.5px; color:var(--muted); margin-top:6px; line-height:1.35; }
+
+  section{ margin-top:56px; }
+  .section-head{ display:flex; align-items:baseline; gap:14px; margin-bottom:18px; }
+  .section-head h2{ font-size:15px; color:var(--ink); white-space:nowrap; }
+  .section-head .rule{ height:1px; background:var(--border); width:100%; }
+
+  p.body-text{ color:var(--muted); font-size:16px; max-width:64ch; }
+
+  .chips{ display:flex; flex-wrap:wrap; gap:8px; }
+  .chip{ border:1px solid var(--border); color:var(--muted); font-size:13.5px; padding:6px 12px;
+    border-radius:2px; background:var(--surface); }
+
+  .role-item{ position:relative; padding-left:28px; border-left:1px solid var(--border); padding-bottom:32px; }
+  .role-item:last-child{ padding-bottom:0; }
+  .role-item::before{ content:''; position:absolute; left:-5px; top:6px; width:9px; height:9px;
+    border-radius:50%; background:var(--teal); border:2px solid var(--bg); }
+  .role-title{ font-size:17px; font-weight:600; color:var(--ink); }
+  .role-meta{ font-size:13.5px; color:var(--muted); margin-top:2px; font-family:'IBM Plex Mono', monospace; }
+  .role-item ul{ margin:12px 0 0; padding-left:18px; color:var(--muted); font-size:15px; }
+  .role-item li{ margin-bottom:6px; }
+
+  .capstone{ background:var(--surface); border:1px solid var(--border); border-radius:3px; padding:24px; }
+  .capstone h3{ font-size:18px; margin-bottom:6px; }
+  .capstone .sub{ color:var(--muted); font-size:13.5px; margin-bottom:16px; font-family:'IBM Plex Mono', monospace; }
+  .flow{ display:flex; align-items:center; gap:6px; margin:18px 0; flex-wrap:wrap; }
+  .flow .node{ font-size:12.5px; border:1px solid var(--border); padding:6px 10px; border-radius:2px; color:var(--ink); background:var(--bg); }
+  .flow .arrow{ color:var(--amber); font-family:'IBM Plex Mono', monospace; font-size:14px; }
+  .capstone p{ color:var(--muted); font-size:15px; margin:0; }
+
+  .edu-item{ display:flex; justify-content:space-between; gap:16px; padding:14px 0; border-top:1px solid var(--border); }
+  .edu-item:last-child{ border-bottom:1px solid var(--border); }
+  .edu-name{ font-weight:600; font-size:15.5px; }
+  .edu-school{ color:var(--muted); font-size:14px; margin-top:2px; }
+  .edu-date{ color:var(--muted); font-size:13.5px; font-family:'IBM Plex Mono', monospace; white-space:nowrap; }
+
+  footer{ margin-top:64px; padding-top:24px; border-top:1px solid var(--border); color:var(--muted); font-size:14px; }
+  footer .status{ color:var(--teal); font-weight:500; }
+
+  @media (max-width: 560px){
+    .kpis{ grid-template-columns:repeat(2,1fr); }
+    h1{ font-size:32px; }
+    .wrap{ padding:44px 18px 60px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <p class="kicker">Muhammad Waiz Siddiqui</p>
+    <h1>Turning messy operational data<br>into decisions people act on.</h1>
+    <p class="role">Data &amp; GTM Analyst</p>
+    <p class="intro">MSc in Data Analytics for Business and Economics (HSE). Several years building dashboards, KPI reporting, and campaign analysis across US and European markets — remote, from Karachi, Pakistan.</p>
+    <p class="contact">
+      <a href="mailto:Waizsiddiqui595@gmail.com">Waizsiddiqui595@gmail.com</a><span>·</span>
+      <a href="tel:+923152472407">+92 315 2472407</a><span>·</span>
+      <a href="https://www.linkedin.com/in/waiz-siddiqui-45542b43a" target="_blank" rel="noopener">LinkedIn</a><span>·</span>
+      Karachi, Pakistan (worldwide remote)
+    </p>
+
+    <div class="kpis">
+      <div class="kpi"><div class="num">100+</div><div class="lbl">affiliate &amp; influencer partners analyzed</div></div>
+      <div class="kpi"><div class="num">30%</div><div class="lbl">increase in engagement &amp; conversions</div></div>
+      <div class="kpi"><div class="num">50%</div><div class="lbl">faster partner response &amp; resolution</div></div>
+      <div class="kpi"><div class="num">292</div><div class="lbl">participants in thesis research study</div></div>
+    </div>
+  </header>
+
+  <section>
+    <div class="section-head"><h2>Skills</h2><div class="rule"></div></div>
+    <div class="chips">
+      <span class="chip">SQL</span>
+      <span class="chip">Power BI</span>
+      <span class="chip">Advanced Excel</span>
+      <span class="chip">SPSS</span>
+      <span class="chip">A/B Testing</span>
+      <span class="chip">CRM Analytics (Bitrix24)</span>
+      <span class="chip">Regression &amp; ANOVA</span>
+      <span class="chip">Dashboard Design</span>
+      <span class="chip">Stakeholder Communication</span>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head"><h2>Experience</h2><div class="rule"></div></div>
+
+    <div class="role-item">
+      <div class="role-title">Affiliate Marketing Manager — Self Media Group</div>
+      <div class="role-meta">2023 – 2025 · Remote</div>
+      <ul>
+        <li>Analyzed performance data from 100+ affiliate and influencer partners across US and European markets using Bitrix24 CRM, contributing to a 30% increase in engagement and conversions.</li>
+        <li>Built dashboards and recurring performance reports that guided partner recruitment and campaign targeting.</li>
+        <li>Designed and ran A/B tests with cross-functional teams to measure campaign effectiveness.</li>
+        <li>Identified process inefficiencies in partner inquiry handling; cut response and resolution time by 50%.</li>
+      </ul>
+    </div>
+
+    <div class="role-item">
+      <div class="role-title">Affiliate &amp; Influencer Marketing Manager — NexaCom</div>
+      <div class="role-meta">2021 – 2022 · Remote</div>
+      <ul>
+        <li>Analyzed creator and campaign performance using CRM and analytics tools to improve retention and engagement.</li>
+        <li>Designed and maintained KPI dashboards tracking CTR, conversion rate, and ROI.</li>
+        <li>Translated campaign data into content-strategy recommendations that increased video views and affiliate-driven sales.</li>
+      </ul>
+    </div>
+
+    <div class="role-item">
+      <div class="role-title">Marketing &amp; Data Analytics Manager — Kitchen Panda</div>
+      <div class="role-meta">2020 · Remote</div>
+      <ul>
+        <li>Analyzed ad performance data in Power BI and Excel to optimize spend and audience targeting.</li>
+        <li>Generated 50+ qualified leads through data-informed digital campaigns.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head"><h2>Capstone project</h2><div class="rule"></div></div>
+    <div class="capstone">
+      <h3>Conflicting Online Employer Signals and Job Application Intentions</h3>
+      <div class="sub">MSc Thesis · Higher School of Economics · n = 292 · SPSS / Hayes' PROCESS macro</div>
+      <div class="flow">
+        <span class="node">Conflicting signals</span><span class="arrow">→</span>
+        <span class="node">Signal inconsistency</span><span class="arrow">→</span>
+        <span class="node">Perceived ambiguity</span><span class="arrow">→</span>
+        <span class="node">Employer attractiveness</span><span class="arrow">→</span>
+        <span class="node">Intent to apply</span>
+      </div>
+      <p>Designed and ran a between-subjects experimental study testing how conflicting employer information online affects job-seeker perceptions. Built composite variables from multi-item scales, ran reliability testing, correlation, one-way ANOVA, and regression-based mediation/moderation modeling to test 7 hypotheses — including an unexpected finding that contradicted the original hypothesis.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head"><h2>Education</h2><div class="rule"></div></div>
+    <div class="edu-item">
+      <div>
+        <div class="edu-name">MSc, Data Analytics for Business and Economics</div>
+        <div class="edu-school">Higher School of Economics, Saint Petersburg</div>
+      </div>
+      <div class="edu-date">2024 – 2026</div>
+    </div>
+    <div class="edu-item">
+      <div>
+        <div class="edu-name">BBA, Business Administration</div>
+        <div class="edu-school">IQRA University, Karachi</div>
+      </div>
+      <div class="edu-date">2019 – 2023</div>
+    </div>
+  </section>
+
+  <footer>
+    <p><span class="status">● Open to remote roles worldwide</span> — Data Analyst, BI Analyst, Business Analyst positions, overlapping US/EU working hours.</p>
+    <p>English (fluent) · Urdu (native) · Russian (conversational)</p>
+  </footer>
+
+</div>
+</body>
+</html>
